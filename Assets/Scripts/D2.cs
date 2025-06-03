@@ -30,12 +30,14 @@ public class D2 : MonoBehaviour
     }
 
     public ControlMode control;
+    public float Traction = 1;
 
     public float maxAcceleration = 30.0f;
     public float brakeAcceleration = 50.0f;
 
     public float turnSensitivity = 1.0f;
     public float maxSteerAngle = 30.0f;
+    public float Drag = 0.98f;
 
     public Vector3 _centerOfMass;
 
@@ -45,6 +47,8 @@ public class D2 : MonoBehaviour
     float steerInput;
 
     private Rigidbody carRb;
+    private Vector3 MoveForce;
+
 
     //private CarLights carLights;
 
@@ -61,6 +65,19 @@ public class D2 : MonoBehaviour
         GetInputs();
         AnimateWheels();
         WheelEffects();
+
+        MoveForce += transform.forward * maxAcceleration * Input.GetAxis("Vertical") * Time.deltaTime;
+        transform.position += MoveForce * Time.deltaTime;
+
+        MoveForce *= Drag;
+        MoveForce = Vector3.ClampMagnitude(MoveForce, maxAcceleration);
+
+        float steerInput = Input.GetAxis("Horizontal");
+        transform.Rotate(Vector3.up * steerInput * MoveForce.magnitude * maxSteerAngle * Time.deltaTime);
+
+        Debug.DrawRay(transform.position, MoveForce.normalized * 3);
+        Debug.DrawRay(transform.position, transform.forward * 3, Color.blue);
+        MoveForce = Vector3.Lerp(MoveForce.normalized, transform.forward, Traction * Time.deltaTime) * MoveForce.magnitude;
     }
 
     void LateUpdate()
