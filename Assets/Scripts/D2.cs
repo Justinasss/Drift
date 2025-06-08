@@ -55,6 +55,7 @@ public class D2 : MonoBehaviour
     void Start()
     {
         carRb = GetComponent<Rigidbody>();
+
         carRb.centerOfMass = _centerOfMass;
 
         //carLights = GetComponent<CarLights>();
@@ -86,6 +87,7 @@ public class D2 : MonoBehaviour
         Steer();
         Brake();
     }
+
 
     public void MoveInput(float input)
     {
