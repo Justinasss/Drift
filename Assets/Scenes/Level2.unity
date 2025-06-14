@@ -288,6 +288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Free Racing Car Blue Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4591691155392393144, guid: a9cbfe7195f75844aa7ec0619ca7616f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10624,6 +10628,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f04634c76372c8d45bdfb898fbb94592, type: 3}
+--- !u!1 &1588796537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3340950528223635938, guid: ac2e46e257a11b04b8774fe77ceb50ca, type: 3}
+  m_PrefabInstance: {fileID: 2039935254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1588796545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588796537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc432cf75501bc45af712214583fa62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Level3
 --- !u!1001 &1606364657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13424,10 +13446,17 @@ PrefabInstance:
       propertyPath: nextScene
       value: Level3
       objectReference: {fileID: 0}
+    - target: {fileID: 7177263666974572689, guid: ac2e46e257a11b04b8774fe77ceb50ca, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3340950528223635938, guid: ac2e46e257a11b04b8774fe77ceb50ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1588796545}
   m_SourcePrefab: {fileID: 100100000, guid: ac2e46e257a11b04b8774fe77ceb50ca, type: 3}
 --- !u!1001 &2047619590
 PrefabInstance:
